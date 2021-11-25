@@ -1,0 +1,11 @@
+@import './variables';
+
+*{
+    font-family: $font-primary;
+}
+
+body {
+    font-size: $base-font;
+    color: $text-pri-color;
+    background-color: $bg-pri-col;
+}
