@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Card from '@/components/Card.vue';
 
 export default {
@@ -26,27 +25,9 @@ export default {
     components: {
         Card,
     },
-    data() {
-        return {
-            albumList: null,
-        }
+    props: {
+        albumList: Array,
     },
-    created() {
-        this.getAlbums();
-    },
-    methods: {
-        getAlbums() {
-            /**
-             * Get album from API
-             */
-            axios.get('https://flynn.boolean.careers/exercises/api/array/music')
-            .then(result => {
-                console.log(result.data.response);
-                this.albumList = result.data.response;
-            })
-            .catch(err => console.log(err));
-        }
-    }
 }
 </script>
 
